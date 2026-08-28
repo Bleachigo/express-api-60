@@ -1,6 +1,7 @@
+import express from 'express';
 import { articleController } from '../controllers/articleController';
 
-const router = express.Router();
+export const router = express.Router();
 
 router.get('/', articleController.getRoot);
 router.get('/articles', articleController.getArticles);
