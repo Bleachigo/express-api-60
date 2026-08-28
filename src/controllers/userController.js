@@ -6,7 +6,7 @@ export const userController = {
     res.send('Get user route');
   },
   postUser(req, res) {
-    res.send('Post root route');
+    res.send('Post user route');
   },
   getUserById(req, res) {
     res.send(`Get user by Id route: ${req.params.userId}`);
