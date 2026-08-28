@@ -1,24 +1,8 @@
 import express from 'express';
+import userRoutes from './src/routes/userRoutes.js';
+import articleRoutes from './src/routes/articleRoutes.js';
 
 const app = express();
-const port = 3000;
-
-app.get('/', (req, res) => {
-  res.send('Welcome to main page!');
-});
-
-app.post('/submit', (req, res) => {
-  res.send('Data fetched with POST request');
-});
-
-app.put('/update', (req, res) => {
-  res.send('Request for data update received');
-});
-
-app.delete('/delete', (req, res) => {
-  res.send('Request for data delete received');
-});
-
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
+app.use('/', userRoutes);
+app.use('/', articleRoutes);
+app.listen(3000, () => console.log('Server running on http://localhost:3000'));
