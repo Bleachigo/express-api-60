@@ -1,7 +1,4 @@
 export const userController = {
-  getRoot(req, res) {
-    res.send('Get root route');
-  },
   getUsers(req, res) {
     res.send('Get users route');
   },
