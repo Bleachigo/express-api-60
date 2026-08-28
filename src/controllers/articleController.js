@@ -1,7 +1,4 @@
 export const articleController = {
-  getRoot(req, res) {
-    res.send('Get root route');
-  },
   getArticles(req, res) {
     res.send('Get articles route');
   },
