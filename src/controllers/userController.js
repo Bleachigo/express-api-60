@@ -2,11 +2,11 @@ export const userController = {
   getRoot(req, res) {
     res.send('Get root route');
   },
-  getUser(req, res) {
-    res.send('Get user route');
+  getUsers(req, res) {
+    res.send('Get users route');
   },
-  postUser(req, res) {
-    res.send('Post user route');
+  postUsers(req, res) {
+    res.send('Post users route');
   },
   getUserById(req, res) {
     res.send(`Get user by Id route: ${req.params.userId}`);

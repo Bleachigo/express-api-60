@@ -2,11 +2,11 @@ export const articleController = {
   getRoot(req, res) {
     res.send('Get root route');
   },
-  getArticle(req, res) {
-    res.send('Get article route');
+  getArticles(req, res) {
+    res.send('Get articles route');
   },
-  postArticle(req, res) {
-    res.send('Post article route');
+  postArticles(req, res) {
+    res.send('Post articles route');
   },
   getArticleById(req, res) {
     res.send(`Get article by Id route: ${req.params.articleId}`);
