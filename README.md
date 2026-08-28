@@ -33,7 +33,6 @@ express-server-60/
 
    ```bash
    git clone <repository-url>
-   cd express-server-60
    ```
 
 2. Install dependencies:
@@ -62,28 +61,28 @@ All responses are plain text to simplify integration and debugging.
 
 ### Root
 
-| Method | Path | Response |
-| ------ | ---- | -------- |
-| GET | `/` | `Get root route` |
+| Method | Path | Response         |
+| ------ | ---- | ---------------- |
+| GET    | `/`  | `Get root route` |
 
 ### Users
 
-| Method | Path | Response |
-| ------ | ---- | -------- |
-| GET | `/users` | `Get users route` |
-| POST | `/users` | `Post users route` |
-| GET | `/users/:userId` | `Get user by Id route: {userId}` |
-| PUT | `/users/:userId` | `Put user by Id route: {userId}` |
+| Method | Path             | Response                            |
+| ------ | ---------------- | ----------------------------------- |
+| GET    | `/users`         | `Get users route`                   |
+| POST   | `/users`         | `Post users route`                  |
+| GET    | `/users/:userId` | `Get user by Id route: {userId}`    |
+| PUT    | `/users/:userId` | `Put user by Id route: {userId}`    |
 | DELETE | `/users/:userId` | `Delete user by Id route: {userId}` |
 
 ### Articles
 
-| Method | Path | Response |
-| ------ | ---- | -------- |
-| GET | `/articles` | `Get articles route` |
-| POST | `/articles` | `Post articles route` |
-| GET | `/articles/:articleId` | `Get article by Id route: {articleId}` |
-| PUT | `/articles/:articleId` | `Put article by Id route: {articleId}` |
+| Method | Path                   | Response                                  |
+| ------ | ---------------------- | ----------------------------------------- |
+| GET    | `/articles`            | `Get articles route`                      |
+| POST   | `/articles`            | `Post articles route`                     |
+| GET    | `/articles/:articleId` | `Get article by Id route: {articleId}`    |
+| PUT    | `/articles/:articleId` | `Put article by Id route: {articleId}`    |
 | DELETE | `/articles/:articleId` | `Delete article by Id route: {articleId}` |
 
 ## Examples
