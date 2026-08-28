@@ -2,9 +2,9 @@
   "name": "express-server-60",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "app.js",
   "scripts": {
-    "express": "node main.js"
+    "start": "node main.js"
   },
   "keywords": [],
   "author": "",
