@@ -32,7 +32,7 @@ express-server-60/
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Bleachigo/express-api-60
    ```
 
 2. Install dependencies:
