@@ -1,12 +1,15 @@
 import express from 'express';
 import { userController } from '../controllers/userController.js';
+import { basicAuth } from '../middleware/auth.middleware.js';
 
 const router = express.Router();
 
-router.get('/users', userController.getUsers);
-router.post('/users', userController.postUsers);
-router.get('/users/:userId', userController.getUserById);
-router.put('/users/:userId', userController.putUserById);
-router.delete('/users/:userId', userController.deleteUserById);
+router.use(basicAuth);
+
+router.get('/', userController.getUsers);
+router.post('/', userController.postUsers);
+router.get('/:userId', userController.getUserById);
+router.put('/:userId', userController.putUserById);
+router.delete('/:userId', userController.deleteUserById);
 
 export default router;

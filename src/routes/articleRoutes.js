@@ -3,10 +3,10 @@ import { articleController } from '../controllers/articleController.js';
 
 const router = express.Router();
 
-router.get('/articles', articleController.getArticles);
-router.post('/articles', articleController.postArticles);
-router.get('/articles/:articleId', articleController.getArticleById);
-router.put('/articles/:articleId', articleController.putArticleById);
-router.delete('/articles/:articleId', articleController.deleteArticleById);
+router.get('/', articleController.getArticles);
+router.post('/', articleController.postArticles);
+router.get('/:articleId', articleController.getArticleById);
+router.put('/:articleId', articleController.putArticleById);
+router.delete('/:articleId', articleController.deleteArticleById);
 
 export default router;

@@ -8,9 +8,11 @@ import { errorHandler } from './src/middleware/error.middleware.js';
 
 export const app = express();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(logRequest);
 app.use('/', rootRoutes);
-app.use('/', userRoutes);
-app.use('/', articleRoutes);
+app.use('/users', userRoutes);
+app.use('/articles', articleRoutes);
 app.use(notFound);
 app.use(errorHandler);
