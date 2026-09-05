@@ -6,12 +6,11 @@ import { validateUserInput } from '../middleware/validate.middleware.js';
 const router = express.Router();
 
 router.use(basicAuth);
-router.use(validateUserInput);
 
 router.get('/', userController.getUsers);
-router.post('/', userController.postUsers);
+router.post('/', validateUserInput, userController.postUsers);
 router.get('/:userId', userController.getUserById);
-router.put('/:userId', userController.putUserById);
+router.put('/:userId', validateUserInput, userController.putUserById);
 router.delete('/:userId', userController.deleteUserById);
 
 export default router;
