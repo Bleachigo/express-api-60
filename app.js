@@ -6,13 +6,26 @@ import { logRequest } from './src/middleware/logger.middleware.js';
 import { notFound } from './src/middleware/not-found.middleware.js';
 import { errorHandler } from './src/middleware/error.middleware.js';
 import { resTextFormat } from './src/middleware/res-text-format.middleware.js';
+import session from 'express-session';
 
 export const app = express();
 
+app.use(logRequest);
 app.use(resTextFormat);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(logRequest);
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || 'student-project-local-secret',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      httpOnly: true,
+      sameSite: 'lax',
+      maxAge: 60 * 60 * 1000,
+    },
+  }),
+);
 app.use('/', rootRoutes);
 app.use('/users', userRoutes);
 app.use('/articles', articleRoutes);
