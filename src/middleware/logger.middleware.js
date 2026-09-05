@@ -1,12 +1,10 @@
 export const logRequest = (req, res, next) => {
-  const now = new Date();
-  const hours = now.getHours();
-  const minutes = now.getMinutes();
-  const seconds = now.getSeconds();
+  const startedAt = Date.now();
 
   res.on('finish', () => {
     console.log(
-      `${hours}:${minutes}:${seconds} - ${req.method} request to ${req.originalUrl} - ${res.statusCode}`,
+      `${new Date().toISOString()} ${req.method} ${req.originalUrl}` +
+        `${res.statusCode} ${Date.now() - startedAt}ms`,
     );
   });
 
