@@ -19,7 +19,7 @@ export const articleController = {
 
       const article = await articleService.findArticleById(articleId);
 
-      res.json(article);
+      res.render('../views/articles/details.ejs', { article });
     } catch (error) {
       next(error);
     }
