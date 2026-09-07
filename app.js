@@ -1,4 +1,6 @@
 import express from 'express';
+import ejs from 'ejs';
+import pug from 'pug';
 import rootRoutes from './src/routes/rootRoutes.js';
 import userRoutes from './src/routes/userRoutes.js';
 import articleRoutes from './src/routes/articleRoutes.js';
@@ -9,6 +11,11 @@ import { resTextFormat } from './src/middleware/res-text-format.middleware.js';
 import session from 'express-session';
 
 export const app = express();
+
+app.set('views', './src/views');
+
+app.engine('ejs', ejs.__express);
+app.engine('pug', pug.__express);
 
 app.use(logRequest);
 app.use(resTextFormat);
