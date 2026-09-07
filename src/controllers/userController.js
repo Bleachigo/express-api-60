@@ -1,12 +1,28 @@
+import { userService } from '../services/user.service.js';
+
 export const userController = {
-  getUsers(req, res) {
-    res.send('Get users route');
+  async getUsers(req, res, next) {
+    try {
+      const users = await userService.getAllUsers();
+
+      res.json(users);
+    } catch (error) {
+      next(error);
+    }
   },
   postUsers(req, res) {
     res.send('Post users route');
   },
-  getUserById(req, res) {
-    res.send(`Get user by Id route: ${req.params.userId}`);
+  async getUserById(req, res, next) {
+    try {
+      const { userId } = req.params;
+
+      const user = await userService.findUserById(userId);
+
+      res.json(user);
+    } catch (error) {
+      next(error);
+    }
   },
   putUserById(req, res) {
     res.send(`Put user by Id route: ${req.params.userId}`);
