@@ -21,7 +21,7 @@ export const userController = {
       const user = await userService.findUserById(userId);
 
       res.type('html');
-      res.render('../views/users/datails.pug', { user });
+      res.render('../views/users/details.pug', { user });
     } catch (error) {
       next(error);
     }
