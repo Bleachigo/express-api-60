@@ -16,6 +16,10 @@ export const userService = {
   async findUserById(userId) {
     const response = await fetch(`${BASE_URL}/users/${userId}`);
 
+    if (response.status === 404) {
+      throw new AppError('User not found', 404);
+    }
+
     if (!response.ok) {
       throw new AppError('Failed to fetch user by id', 502);
     }
