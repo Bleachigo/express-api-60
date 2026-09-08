@@ -5,6 +5,7 @@ export const articleController = {
     try {
       const articles = await articleService.getAllArticles();
 
+      res.type('html');
       res.render('../views/articles/index.ejs', { articles });
     } catch (error) {
       next(error);
@@ -19,6 +20,7 @@ export const articleController = {
 
       const article = await articleService.findArticleById(articleId);
 
+      res.type('html');
       res.render('../views/articles/details.ejs', { article });
     } catch (error) {
       next(error);

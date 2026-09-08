@@ -5,6 +5,7 @@ export const userController = {
     try {
       const users = await userService.getAllUsers();
 
+      res.type('html');
       res.render('../views/users/index.pug', { users });
     } catch (error) {
       next(error);
@@ -19,6 +20,7 @@ export const userController = {
 
       const user = await userService.findUserById(userId);
 
+      res.type('html');
       res.render('../views/users/datails.pug', { user });
     } catch (error) {
       next(error);
