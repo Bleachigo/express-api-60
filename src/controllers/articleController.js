@@ -5,7 +5,7 @@ export const articleController = {
     try {
       const articles = await articleService.getAllArticles();
 
-      res.json(articles);
+      res.render('../views/articles/index.ejs', { articles });
     } catch (error) {
       next(error);
     }

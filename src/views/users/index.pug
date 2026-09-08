@@ -1,0 +1,15 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title All users
+  body 
+    h1 Users
+
+  each user in users
+    div
+      h2= user.name
+      p= user.id
+      p= user.username
+      p= user.email
